@@ -10,25 +10,28 @@ namespace Domain
     public class Board
     {
         public Square[,] Squares { get; set; }
-        private int rows = 9;
-        private int cols = 9;
+
+        public int Size
+        {
+            get { return 9; }
+        }
 
         public Board(string content)
         {
-            Squares = new Square[rows,cols];
+            Squares = new Square[Size,Size];
             ;
             var i = 0;
             var j = 0;
 
             foreach (var character in content)
             {
-                    Squares[i,j] = new Square(character);
+                Squares[i, j] = new Square(character);
                 j++;
-                if (j >= cols)
+                if (j >= Size)
                 {
                     j = 0;
                     i ++;
-                    if (i >= rows)
+                    if (i >= Size)
                         break;
                 }
             }
@@ -58,7 +61,10 @@ namespace Domain
                             printable.Append(" ");
                         }
                     }
-                    printable.Append(square.Number);
+                    var print = square.Number.ToString();
+                    if (print == "0")
+                        print = ".";
+                    printable.Append(print);
                     i++;
                 }
                 return printable.ToString();

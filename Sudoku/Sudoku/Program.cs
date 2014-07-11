@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Controller;
 using Controller.Util;
 using Domain;
 
@@ -20,7 +21,12 @@ namespace Sudoku
             {
                 var fileHandler = new FileHandler(args[0]);
                 var board = new Board(fileHandler.Content);
+                var gameEngine = new GameEngine(board);
                 Console.Write(board.Printable);
+                Console.WriteLine();
+                var solved = gameEngine.Solve();
+                Console.WriteLine("Solved? " + solved);
+
             }
         }
     }

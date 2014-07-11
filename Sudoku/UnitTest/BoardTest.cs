@@ -45,5 +45,12 @@ namespace UnitTest
             Assert.IsNotNullOrEmpty(board.Printable);
         }
 
+        [Test]
+        public void Prefilled_squares_are_fixed()
+        {
+            Assert.IsTrue(board.Squares[0,0].PreFilled);
+            Assert.IsFalse(board.Squares[1,0].PreFilled);
+        }
+
     }
 }

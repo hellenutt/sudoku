@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BoardTest.cs" />
     <Compile Include="FileHandlerTest.cs" />
+    <Compile Include="GameEngineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
