@@ -52,5 +52,10 @@ namespace UnitTest
             Assert.IsFalse(board.Squares[1,0].PreFilled);
         }
 
+        [Test]
+        public void Board_should_have_classification()
+        {
+            Assert.IsTrue(board.Classification, Classification.EASY);
+        }
     }
 }

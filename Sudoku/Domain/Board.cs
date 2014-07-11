@@ -71,4 +71,12 @@ namespace Domain
             }
         }
     }
+
+    public enum Classification
+    {
+        Easy,
+        Medium,
+        Hard,
+        Samurai
+    }
 }

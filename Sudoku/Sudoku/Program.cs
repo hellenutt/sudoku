@@ -26,6 +26,7 @@ namespace Sudoku
                 Console.WriteLine();
                 var solved = gameEngine.Solve();
                 Console.WriteLine("Solved? " + solved);
+                Console.WriteLine(board.Printable);
 
             }
         }

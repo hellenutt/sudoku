@@ -116,10 +116,9 @@ namespace Controller
             int row;
             int col;
             FindEmptySquare(out row, out col);
-            if (row < 0 || col < 0)
+            if (row < 0 && col < 0)
                 return true;
 
-            //Trying with all valid numbers.
             for (int i = 1; i < 10; i++)
             {
                 if (Move(row, col, i))
@@ -127,9 +126,11 @@ namespace Controller
                     if (Solve())
                         return true;
 
-                    Move(row, col, 0);
+                    // Can't find a valid number, reset number to zero and continue.
+                    _board.Squares[row,col].SetNumber(0);
                 }
             }
+
             return false;
         }
 
@@ -139,12 +140,15 @@ namespace Controller
             col = -1;
             for (int i = 0; i < _board.Size; i++)
             {
+                if (row > -1)
+                    break;
                 for (int j = 0; j < _board.Size; j++)
                 {
                     if (_board.Squares[i, j].Number == 0)
                     {
                         row = i;
                         col = j;
+                        break;
                     }
                 }
             }

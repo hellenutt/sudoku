@@ -72,7 +72,9 @@ namespace UnitTest
         [Test]
         public void It_should_be_possible_to_solve_the_sudoku()
         {
-            Assert.IsTrue(_gameEngine.Solve());
+            var solved = _gameEngine.Solve();
+            Console.Out.Write(_board.Printable);
+            Assert.IsTrue(solved);
         }
     }
 }
