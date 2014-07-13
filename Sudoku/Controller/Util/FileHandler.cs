@@ -1,16 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
 
 namespace Controller.Util
 {
     public class FileHandler
     {
-        private string _content;
+        private readonly string _content;
 
         public FileHandler(String filePath)
         {

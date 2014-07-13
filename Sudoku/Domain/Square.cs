@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Domain
 {
     public class Square
     {
         private int _number;
-        private bool _preFilled;
+        private readonly bool _readOnly;
 
         public Square(char character)
         {
             if (char.IsDigit(character) && character != '0')
             {
                 _number = Convert.ToInt32(character.ToString());
-                _preFilled = true;
+                _readOnly = true;
             }
             else _number = 0;
         }
@@ -32,9 +27,9 @@ namespace Domain
             get { return _number; }
         }
 
-        public bool PreFilled
+        public bool ReadOnly
         {
-            get { return _preFilled; }
+            get { return _readOnly; }
         }
     }
 }

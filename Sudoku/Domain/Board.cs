@@ -1,15 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Domain
 {
     public class Board
     {
         public Square[,] Squares { get; set; }
+        public Classification Classification {
+            get
+            {
+                var numberOfPreFilled = 0;
+                foreach (var square in Squares)
+                {
+                    if (square.ReadOnly) numberOfPreFilled++;
+                }
+                if (31 <= numberOfPreFilled && numberOfPreFilled <= 35)
+                    return Classification.Easy;
+                if (25 <= numberOfPreFilled && numberOfPreFilled <= 30)
+                    return Classification.Medium;
+                return Classification.Unknown;
+            }
+        }
 
         public int Size
         {
@@ -76,7 +86,6 @@ namespace Domain
     {
         Easy,
         Medium,
-        Hard,
-        Samurai
+        Unknown
     }
 }
