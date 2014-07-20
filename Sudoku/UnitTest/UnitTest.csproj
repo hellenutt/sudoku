@@ -51,13 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{e2a157c1-6a7f-458f-ae7a-bb6bf56cee84}</Project>
-      <Name>Controller</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\DomainModel.csproj">
-      <Project>{AC6E1085-EBC1-4C3F-AB29-1B47E99990B3}</Project>
-      <Name>DomainModel</Name>
+    <ProjectReference Include="..\Sudoku\Sudoku.csproj">
+      <Project>{4D4DE3FA-1AAE-40A9-ABD4-9CCD367D2188}</Project>
+      <Name>Sudoku</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

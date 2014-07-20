@@ -41,22 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\GameEngine.cs" />
+    <Compile Include="Controller\Util\FileHandler.cs" />
+    <Compile Include="DomainModel\Board.cs" />
+    <Compile Include="DomainModel\Square.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{E2A157C1-6A7F-458F-AE7A-BB6BF56CEE84}</Project>
-      <Name>Controller</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\DomainModel.csproj">
-      <Project>{AC6E1085-EBC1-4C3F-AB29-1B47E99990B3}</Project>
-      <Name>DomainModel</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
